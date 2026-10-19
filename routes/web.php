@@ -6,3 +6,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', LandingController::class);
 Route::get('/download', DownloadController::class);
+Route::view('/privacidade', 'legal.privacy');
+Route::view('/termos', 'legal.terms');

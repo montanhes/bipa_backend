@@ -66,6 +66,8 @@
         .btn svg { width: 20px; height: 20px; }
         .btn { -webkit-tap-highlight-color: transparent; }
         .hint { margin: 14px 0 0; color: var(--muted); font-size: 0.8125rem; }
+        .legal { margin-top: 32px; font-size: 0.8125rem; color: var(--muted); }
+        .legal a { color: var(--muted); }
     </style>
 </head>
 <body>
@@ -92,6 +94,7 @@
             Baixar APP{{ $apkSize ? " ({$apkSize})" : '' }}
         </a>
         <p class="hint">Para Android. Ao abrir o arquivo baixado, o celular pode pedir permissão para instalar: é só tocar em Permitir.</p>
+        <nav class="legal"><a href="/privacidade">Privacidade</a> · <a href="/termos">Termos</a></nav>
     </main>
 </body>
 </html>
