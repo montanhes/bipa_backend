@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PackageCount;
 use App\Models\User;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Number;
 use Illuminate\View\View;
 
 class LandingController extends Controller
@@ -16,9 +17,11 @@ class LandingController extends Controller
             'packages' => (int) PackageCount::sum('quantity'),
         ]);
 
+        $apk = config('bipa.apk_path');
+
         return view('landing', [
             ...$stats,
-            'apkAvailable' => is_file(config('bipa.apk_path')),
+            'apkSize' => is_file($apk) ? Number::fileSize(filesize($apk), precision: 0) : null,
         ]);
     }
 }
